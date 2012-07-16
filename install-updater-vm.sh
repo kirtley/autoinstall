@@ -2,7 +2,7 @@
 # Kirtley Wienbroer
 # kirtley@osgenie.com
 
-nfs-server=192.168.122.1
+nfsserver=192.168.122.1
 function check_if_user_is_root()
 {
 	if [ $UID != 0 ]; then
@@ -19,14 +19,14 @@ mkdir -p /iso/source
 mkdir -p /iso/nfs
 chmod -R 777 /iso
 mkdir -p /var/nfs/images
-chmod -R /var/nfs/images
+chmod -R 777 /var/nfs/images
 
 # modify nfs-common
 echo "NEED_IDMAPD=yes" >> /etc/nfs-common
 # modify fstab
 echo "# nfs share for updated isos" >> /etc/fstab
-echo "$nfs-server:/updatediso /iso/nfs nfs4 _netdev,auto 0 0" >> /etc/fstab
-echo "$nfs-server:/images /var/nfs/images nfs4 _netdev,auto 0 0" >> /etc/fstab
+echo "$nfsserver:/updatediso /iso/nfs nfs4 _netdev,auto 0 0" >> /etc/fstab
+echo "$nfsserver:/images /var/nfs/images nfs4 _netdev,auto 0 0" >> /etc/fstab
 
 mount -a
 add-apt-repository -y ppa:uck-team/uck-stable && sudo apt-get update
