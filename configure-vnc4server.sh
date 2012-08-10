@@ -1,6 +1,7 @@
 #!/bin/bash
 
 read -s -p "What is the base password? " userpass
+echo ""
 newuser=remoteuser
 
 sudo apt-get update
@@ -9,13 +10,14 @@ sudo useradd -d /home/$newuser -m -p $userpass $newuser
 sudo su $newuser -c 'vnc4server :1 '
 sudo su $newuser -c 'vncserver -kill :1 '
 sudo mv /home/$newuser/.vnc/xstartup /home/$newuser/.vnc/xstartup.orig
-sudo su $newuser -c 'echo "#!/bin/sh" >> /home/$newuser/.vnc/xstartup '
-sudo su $newuser -c 'unset SESSION_MANAGER" >> /home/$newuser/.vnc/xstartup '
-sudo su $newuser -c 'gnome-session --session=ubuntu-2d &" >> /home/$newuser/.vnc/xstartup '
-sudo su $newuser -c '[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup" >> /home/$newuser/.vnc/xstartup '
-sudo su $newuser -c '[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources" >> /home/$newuser/.vnc/xstartup '
-sudo su $newuser -c 'xsetroot -solid grey" >> /home/$newuser/.vnc/xstartup '
-sudo su $newuser -c 'vncconfig -iconic &" >> /home/$newuser/.vnc/xstartup '
+sudo su $newuser -c 'touch /home/$newuser/.vnc/xstartup '
+sudo su $newuser -c 'echo "\#!/bin/sh" >> /home/$newuser/.vnc/xstartup '
+sudo su $newuser -c 'echo "unset SESSION_MANAGER" >> /home/$newuser/.vnc/xstartup '
+sudo su $newuser -c 'echo "gnome-session --session=ubuntu-2d &" >> /home/$newuser/.vnc/xstartup '
+sudo su $newuser -c 'echo "[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup" >> /home/$newuser/.vnc/xstartup '
+sudo su $newuser -c 'echo "[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources" >> /home/$newuser/.vnc/xstartup '
+sudo su $newuser -c 'echo "xsetroot -solid grey" >> /home/$newuser/.vnc/xstartup '
+sudo su $newuser -c 'echo "vncconfig -iconic &" >> /home/$newuser/.vnc/xstartup '
 
 for i in 1 2 3 4 5
 do
