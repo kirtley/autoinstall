@@ -1,8 +1,8 @@
 #!/bin/bash
 
+newuser=remoteuser
 read -s -p "What is the base password? " userpass
 echo ""
-newuser=remoteuser
 
 sudo apt-get update
 sudo apt-get install -y vnc4server
