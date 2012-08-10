@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 # Install Java
 sudo apt-get install -y openjdk-6-jdk
 #Install Tomcat6

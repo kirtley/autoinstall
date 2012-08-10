@@ -5,7 +5,7 @@ read -s -p "What is the base password? " userpass
 echo ""
 
 sudo apt-get update
-sudo apt-get install -y vnc4server
+sudo apt-get install -y vnc4server ubuntu-desktop
 sudo useradd -d /home/$newuser -m -p $userpass $newuser
 sudo su $newuser -c 'vnc4server :1 '
 sudo su $newuser -c 'vncserver -kill :1 '
