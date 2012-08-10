@@ -1,12 +1,13 @@
-#!/bin/sh
+#!/bin/bash
 read -p "What is the hostname of the VNC server?" vnchostname
 read -p "What is the IP of the VNC server?" vncip
-read -p "What is the VNC password?" vncpassword
+read -s -p "What is the VNC password?" vncpassword
 echo ""
-read -p "What is password for guacamole users?" guacpassword
+read -s -p "What is password for guacamole users?" guacpassword
 echo ""
 
 # Configure Guacamole
+echo "<user-mapping>" | sudo tee -a /etc/guacamole/user-mapping.xml
 for i in 1 2 3 4 5
 do
 vncport="590"$i
@@ -17,3 +18,4 @@ vncport="590"$i
 	echo "     <param name=\"password\">$vncpassword</param>" | sudo tee -a /etc/guacamole/user-mapping.xml
 	echo "</authorize>" | sudo tee -a /etc/guacamole/user-mapping.xml
 done
+echo "</user-mapping>" | sudo tee -a /etc/guacamole/user-mapping.xml
