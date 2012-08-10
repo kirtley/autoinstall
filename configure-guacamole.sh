@@ -7,7 +7,7 @@ read -p "What is password for guacamole users?" guacpassword
 echo ""
 
 # Configure Guacamole
-for i in {1 2 3 4 5}
+for i in 1 2 3 4 5
 do
 vncport="590"$i
 	echo "<authorize username=\"$vnchostname$i\" password=\"$guacpassword$i\">" | sudo tee -a /etc/guacamole/user-mapping.xml
