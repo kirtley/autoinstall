@@ -7,7 +7,6 @@ read -s -p "What is password for guacamole users?" guacpassword
 echo ""
 
 # Configure Guacamole
-sudo su
 for i in {1..5}
 do
 vncport="590"$i
