@@ -10,10 +10,10 @@ echo ""
 for i in {1..5}
 do
 vncport="590"$i
-	sudo /bin/sh -c 'echo "<authorize username=\"$vnchostname$i\" password=\"$guacpassword$i\">" >> /etc/guacamole/user-mapping.xml'
-	sudo /bin/sh -c 'echo "     <protocol>vnc</protocol>" >> /etc/guacamole/user-mapping.xml'
-	sudo /bin/sh -c 'echo "     <param name=\"hostname\">$vncip</param>" >> /etc/guacamole/user-mapping.xml'
-	sudo /bin/sh -c 'echo "     <param name=\"port\">$vncport</param>" >> /etc/guacamole/user-mapping.xml'
-	sudo /bin/sh -c 'echo "     <param name=\"password\">$vncpassword</param>" >> /etc/guacamole/user-mapping.xml'
-	sudo /bin/sh -c 'echo "</authorize>" >> /etc/guacamole/user-mapping.xml'
+	sudo echo "<authorize username=\"$vnchostname$i\" password=\"$guacpassword$i\">" >> /etc/guacamole/user-mapping.xml
+	sudo echo "     <protocol>vnc</protocol>" >> /etc/guacamole/user-mapping.xml
+	sudo echo "     <param name=\"hostname\">$vncip</param>" >> /etc/guacamole/user-mapping.xml
+	sudo echo "     <param name=\"port\">$vncport</param>" >> /etc/guacamole/user-mapping.xml
+	sudo echo "     <param name=\"password\">$vncpassword</param>" >> /etc/guacamole/user-mapping.xml
+	sudo echo "</authorize>" >> /etc/guacamole/user-mapping.xml
 done
