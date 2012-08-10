@@ -6,8 +6,8 @@ newuser=remoteuser
 sudo apt-get update
 sudo apt-get install -y vnc4server
 sudo useradd -d /home/$newuser -m -p $userpass $newuser
-su $newuser -c 'vnc4server :1 '
-su $newuser -c 'vncserver -kill :1 '
+sudo su $newuser -c 'vnc4server :1 '
+sudo su $newuser -c 'vncserver -kill :1 '
 
 for i in 1 2 3 4 5
 do
