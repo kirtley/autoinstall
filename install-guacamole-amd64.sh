@@ -5,9 +5,10 @@ sudo apt-get install -y openjdk-6-jdk
 sudo apt-get install -y tomcat6 libvncserver0
 # sudo echo "JAVA_HOME=/usr/lib/jvm/java-7-oracle" >> JAVA_HOME=/usr/lib/jvm/java-7-oracle
 # Install Guacamole 0.6.0
+cd /tmp/
 wget http://iweb.dl.sourceforge.net/project/guacamole/current/binary/linux-x86-64/ubuntu-12.04/bundle/guacamole-0.6.0-ubuntu-12.04-x86-64.tar.gz
 tar xzf guacamole-0.6.0-ubuntu-12.04-x86-64.tar.gz 
-cd guacamole-0.6.0-ubuntu-12.04-x86-64
+cd guacamole-0.6.0-ubuntu-12.04-x86_64
 sudo dpkg -i guacd_*.deb guacamole_*.deb libguac3_*.deb libguac-client-vnc0_*.deb
 sudo dpkg -i guacamole-tomcat_*.deb
 # Create new user settings
