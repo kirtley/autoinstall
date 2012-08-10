@@ -11,6 +11,7 @@ sudo su $newuser -c 'vnc4server :1 '
 sudo su $newuser -c 'vncserver -kill :1 '
 sudo mv /home/$newuser/.vnc/xstartup /home/$newuser/.vnc/xstartup.orig
 sudo su $newuser -c 'touch ~/.vnc/xstartup '
+sudo su $newuser -c 'chmod a+x ~/.vnc/xstartup '
 sudo su $newuser -c 'echo "\#!/bin/sh" >> ~/.vnc/xstartup '
 sudo su $newuser -c 'echo "unset SESSION_MANAGER" >> ~/.vnc/xstartup '
 sudo su $newuser -c 'echo "gnome-session --session=ubuntu-2d &" >> ~/.vnc/xstartup '
