@@ -33,7 +33,7 @@ echo "# Some things that run always" | sudo tee -a /etc/init.d/vnc4server
 echo "touch /var/lock/vnc4server" | sudo tee -a /etc/init.d/vnc4server
 echo "" | sudo tee -a /etc/init.d/vnc4server
 echo "# Carry out specific functions when asked to by the system" | sudo tee -a /etc/init.d/vnc4server
-echo "case \"$1\" in" | sudo tee -a /etc/init.d/vnc4server
+echo "case \"\$1\" in" | sudo tee -a /etc/init.d/vnc4server
 echo "start)" | sudo tee -a /etc/init.d/vnc4server
 echo "echo \"Starting script vnc4server \"" | sudo tee -a /etc/init.d/vnc4server
 for i in 1 2 3 4 5
