@@ -5,13 +5,13 @@ newuser=remoteuser
 
 sudo apt-get update
 sudo apt-get install -y vnc4server
-echo $userpass > sudo useradd -d /home/$newuser -m -k -p $newuser
+sudo useradd -d /home/$newuser -m -p $userpass $newuser
 su $newuser -c 'vnc4server :1 '
 su $newuser -c 'vncserver -kill :1 '
 
 for i in 1 2 3 4 5
 do
-echo $userpass > sudo useradd -d /home/$newuser$i -m -k /home/$newuser -p $newuser$i
+sudo useradd -d /home/$newuser$i -m -k /home/$newuser -p $userpass $newuser$i
 done
 
 sudo touch /etc/init.d/vnc4server
