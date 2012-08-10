@@ -10,14 +10,14 @@ sudo useradd -d /home/$newuser -m -p $userpass $newuser
 sudo su $newuser -c 'vnc4server :1 '
 sudo su $newuser -c 'vncserver -kill :1 '
 sudo mv /home/$newuser/.vnc/xstartup /home/$newuser/.vnc/xstartup.orig
-sudo su $newuser -c 'touch /home/$newuser/.vnc/xstartup '
-sudo su $newuser -c 'echo "\#!/bin/sh" >> /home/$newuser/.vnc/xstartup '
-sudo su $newuser -c 'echo "unset SESSION_MANAGER" >> /home/$newuser/.vnc/xstartup '
-sudo su $newuser -c 'echo "gnome-session --session=ubuntu-2d &" >> /home/$newuser/.vnc/xstartup '
-sudo su $newuser -c 'echo "[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup" >> /home/$newuser/.vnc/xstartup '
-sudo su $newuser -c 'echo "[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources" >> /home/$newuser/.vnc/xstartup '
-sudo su $newuser -c 'echo "xsetroot -solid grey" >> /home/$newuser/.vnc/xstartup '
-sudo su $newuser -c 'echo "vncconfig -iconic &" >> /home/$newuser/.vnc/xstartup '
+sudo su $newuser -c 'touch ~/.vnc/xstartup '
+sudo su $newuser -c 'echo "\#!/bin/sh" >> ~/.vnc/xstartup '
+sudo su $newuser -c 'echo "unset SESSION_MANAGER" >> ~/.vnc/xstartup '
+sudo su $newuser -c 'echo "gnome-session --session=ubuntu-2d &" >> ~/.vnc/xstartup '
+sudo su $newuser -c 'echo "[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup" >> ~/.vnc/xstartup '
+sudo su $newuser -c 'echo "[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources" >> ~/.vnc/xstartup '
+sudo su $newuser -c 'echo "xsetroot -solid grey" >> ~/.vnc/xstartup '
+sudo su $newuser -c 'echo "vncconfig -iconic &" >> ~/.vnc/xstartup '
 
 for i in 1 2 3 4 5
 do
