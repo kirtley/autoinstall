@@ -11,3 +11,8 @@ tar xzf guacamole-0.6.0-ubuntu-12.04-i586.tar.gz
 cd guacamole-0.6.0-ubuntu-12.04-i586
 sudo dpkg -i guacd_*.deb guacamole_*.deb libguac3_*.deb libguac-client-vnc0_*.deb
 sudo dpkg -i guacamole-tomcat_*.deb
+# Create new user settings
+sudo mv /etc/guacamole/user-mapping.xml /etc/guacamole/user-mapping.xml.orig
+sudo touch /etc/guacamole/user-mapping.xml
+sudo chown root:guacamole-web /etc/guacamole/user-mapping.xml
+sudo chmod 640 /etc/guacamole/user-mapping.xml
