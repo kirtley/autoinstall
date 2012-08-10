@@ -11,7 +11,7 @@ echo "<user-mapping>" | sudo tee -a /etc/guacamole/user-mapping.xml
 for i in 1 2 3 4 5
 do
 vncport="590"$i
-guacuserpw="$(echo -n "$guacpassword$i" | md5 )"
+guacuserpw="$(echo -n "$guacpassword$i" | md5  | cut -f1 -d' ')"
 	echo "<authorize username=\"$vnchostname$i\" password=\"$guacuserpw\" encoding=\"md5\">" | sudo tee -a /etc/guacamole/user-mapping.xml
 	echo "     <protocol>vnc</protocol>" | sudo tee -a /etc/guacamole/user-mapping.xml
 	echo "     <param name=\"hostname\">$vncip</param>" | sudo tee -a /etc/guacamole/user-mapping.xml
