@@ -1,9 +1,9 @@
 #!/bin/sh
 read -p "What is the hostname of the VNC server?" vnchostname
 read -p "What is the IP of the VNC server?" vncip
-read -s -p "What is the VNC password?" vncpassword
+read -p "What is the VNC password?" vncpassword
 echo ""
-read -s -p "What is password for guacamole users?" guacpassword
+read -p "What is password for guacamole users?" guacpassword
 echo ""
 
 # Configure Guacamole
