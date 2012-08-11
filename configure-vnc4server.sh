@@ -1,4 +1,8 @@
 #!/bin/bash
+# Kirtley Wienbroer
+# kirtley@osgenie.com
+# Thanks to https://coddswallop.wordpress.com/2012/05/09/ubuntu-12-04-precise-pangolin-complete-vnc-server-setup/
+
 
 newuser=remoteuser
 read -s -p "What is the base password? " userpass
