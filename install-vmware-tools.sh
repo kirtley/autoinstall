@@ -10,6 +10,7 @@ fi
 
 function install_vmware_tools ()
 {
+mkdir /mnt/cdrom
 mount /dev/cdrom /mnt/cdrom
 cd /tmp
 rm -r vmware-tools-distrib
