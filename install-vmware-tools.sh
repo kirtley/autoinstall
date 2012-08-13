@@ -14,7 +14,7 @@ mkdir /mnt/cdrom
 mount /dev/cdrom /mnt/cdrom
 cd /tmp
 rm -r vmware-tools-distrib
-tar zxpf /mnt/cdrom/VMwareTools-*.tar.gz
+tar zxpfv /mnt/cdrom/VMwareTools-*.tar.gz
 umount /dev/cdrom
 cd vmware-tools-distrib
 ./vmware-install.pl -d
@@ -22,4 +22,4 @@ cd vmware-tools-distrib
 
 check_for_sudo
 install_vmware_tools
-#reboot
+reboot
