@@ -17,8 +17,8 @@ tar zxpf /mnt/cdrom/VMwareTools-*.tar.gz
 umount /dev/cdrom
 cd vmware-tools-distrib
 ./vmware-install.pl -d
-reboot
 }
 
 check_for_sudo
 install_vmware_tools
+#reboot
