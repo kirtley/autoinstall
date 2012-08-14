@@ -6,7 +6,7 @@
 
 # 32bit environment
 sudo apt-get purge openjdk*
-sudo add-apt install -y python-software-properties
+sudo apt-get install -y python-software-properties
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install -y sun-java6-jdk
