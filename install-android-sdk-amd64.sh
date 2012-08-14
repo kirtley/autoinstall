@@ -4,7 +4,6 @@
 # July 12 2012
 # Install the Android SDK
 
-
 # 64 bit environment
 sudo apt-get purge openjdk*
 sudo add-apt-repository ppa:webupd8team/java

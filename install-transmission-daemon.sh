@@ -1,3 +1,6 @@
-sudo add-apt-repository ppa:transmissionbt/ppa -y
+#!/bin/bash
+# Kirtley Wienbroer
+# kirtley@osgenie.com
+sudo add-apt-repository -y ppa:transmissionbt/ppa
 sudo apt-get update
-sudo apt-get install transmission-daemon -y
+sudo apt-get install -y transmission-daemon

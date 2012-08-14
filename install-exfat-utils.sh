@@ -1,4 +1,6 @@
 #!/bin/bash
+# Kirtley Wienbroer
+# kirtley@osgenie.com
 
 sudo add-apt-repository -y ppa:relan/exfat
 sudo apt-get update

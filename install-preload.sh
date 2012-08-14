@@ -1,2 +1,4 @@
 #!/bin/bash
-sudo apt-get install preload
+# Kirtley Wienbroer
+# kirtley@osgenie.com
+sudo apt-get install -y preload

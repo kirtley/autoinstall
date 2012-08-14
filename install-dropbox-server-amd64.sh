@@ -1,3 +1,6 @@
+#!/bin/bash
+# Kirtley Wienbroer
+# kirtley@osgenie.com
 cd ~ 
 touch .bash_profile
 echo "# /bin/bash ####begin of file ~/.bash_profile" >> .bash_profile

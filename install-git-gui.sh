@@ -1,3 +1,6 @@
+#!/bin/bash
+# Kirtley Wienbroer
+# kirtley@osgenie.com
 # install git and configure github to use RSA key
 read -p "What is your git username?" gitusername
 read -p "What email address should git use? name@server: " gitemailaddy

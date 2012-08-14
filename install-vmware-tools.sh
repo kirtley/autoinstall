@@ -1,4 +1,6 @@
 #!/bin/bash
+# kirtley wienbroer
+# kirtley@osgenie.com
 
 function check_for_sudo ()
 {
