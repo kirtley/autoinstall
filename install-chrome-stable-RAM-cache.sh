@@ -16,5 +16,6 @@ echo "## Chrome cache in RAM" | sudo tee -a /etc/fstab
 echo "tmpfs    /cache/chrome    tmpfs    defaults,noatime,mode=1777      0       0" | sudo tee -a /etc/fstab
 sudo mount -a
 
-## Configure shortcut to use RAMdisk
-sed -i 's/Exec=\/opt\/google\/chrome\/google-chrome/Exec=\/opt\/google\/chrome\/google-chrome --disk-cache-dir="\/cache\/chrome\/" --disk-cache-size=600000000/g'  /usr/share/applications/google-chrome.desktop.test 
+## Configure Unity Launcher to use RAMdisk
+sudo cp /usr/share/applications/google-chrome.desktop /usr/share/applications/google-chrome.desktop.orig
+sudo sed -i 's/Exec=\/opt\/google\/chrome\/google-chrome/Exec=\/opt\/google\/chrome\/google-chrome --disk-cache-dir="\/cache\/chrome\/" --disk-cache-size=600000000/g'  /usr/share/applications/google-chrome.desktop
