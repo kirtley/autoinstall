@@ -23,7 +23,8 @@ if [ $continue = 'yes' ]; then
 	umount /dev/cdrom
 	cd vmware-tools-distrib
 	./vmware-install.pl -d
-else; exit
+else
+    exit
 fi
 }
 
