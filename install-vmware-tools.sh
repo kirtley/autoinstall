@@ -12,14 +12,19 @@ fi
 
 function install_vmware_tools ()
 {
-mkdir /mnt/cdrom
-mount /dev/cdrom /mnt/cdrom
-cd /tmp
-rm -r vmware-tools-distrib
-tar zxpfv /mnt/cdrom/VMwareTools-*.tar.gz
-umount /dev/cdrom
-cd vmware-tools-distrib
-./vmware-install.pl -d
+echo "Make sure you have already chosen 'Install VMWare Tools' on your ESX server!"
+read -p "Type 'yes' to continue :" continue
+if [ $continue = 'yes' ]; then
+	mkdir /mnt/cdrom
+	mount /dev/cdrom /mnt/cdrom
+	cd /tmp
+	rm -r vmware-tools-distrib
+	tar zxpfv /mnt/cdrom/VMwareTools-*.tar.gz
+	umount /dev/cdrom
+	cd vmware-tools-distrib
+	./vmware-install.pl -d
+else; exit
+fi
 }
 
 check_for_sudo
