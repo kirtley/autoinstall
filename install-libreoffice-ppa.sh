@@ -4,4 +4,4 @@
 sudo apt-get install -y python-software-properties
 sudo add-apt-repository -y ppa:libreoffice/ppa
 sudo apt-get update
-sudo apt-get -y dist-upgrade
+sudo apt-get install -y libreoffice
